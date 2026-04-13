@@ -22,28 +22,15 @@ GET /job/:id → check status
 
 ---
 
-### ✅ Project Structure (optional but impressive)
+### ✅ Project Structure 
 
 
-.
-├── api/
-├── worker/
-├── redis/
-├── docker-compose.yml
-├── Dockerfile
+cmd/
+  api/
+  worker/
+internal/
+  handlers/
+  models/
+  queue/
+  redis/
 
-
----
-
-## 🔥 8. Verify
-Go to your repo → check:
-- Files uploaded ✔
-- README visible ✔
-- Clean structure ✔
-
----
-
-## ⚠️ Common Errors (you might hit)
-
-### ❌ “remote origin already exists”
-```bash
