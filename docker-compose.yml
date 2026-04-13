@@ -1,0 +1,24 @@
+
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  api:
+    build: .
+    container_name: api
+    command: go run cmd/api/main.go
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+  worker:
+    build: .
+    container_name: worker
+    command: go run cmd/worker/main.go
+    depends_on:
+      - redis
